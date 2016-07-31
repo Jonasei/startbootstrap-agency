@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>A-Tre Konsult AS</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,9 +31,37 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAADZ1BMJKauGuTeUVo_5mqKxRTfShbO7VsIXv_WRpX69gFnA8rBxQKGgMvhMcOQqi3n0xyhF_y6-KjHA" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        //<![CDATA[
+
+        function load() {
+            if (GBrowserIsCompatible()) {
+                var map = new GMap2(document.getElementById("map"));
+                var center = new GLatLng(59.283933, 10.333328);
+                map.setCenter(center, 12);
+
+                var marker = new GMarker(center, {draggable: true});
+
+                GEvent.addListener(marker, "dragstart", function() {
+                map.closeInfoWindow();
+                });
+
+                GEvent.addListener(marker, "dragend", function() {
+                marker.openInfoWindowHtml("Nå flyttet du nettopp markøren bort fra vårt tilholdssted. Trykk F5 for å få markøren tilbake.");
+            });
+
+            map.addOverlay(marker);
+            }
+        }
+        //]]>
+    </script>
+
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" onload="load()" onunload="GUnload()">
 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -43,7 +71,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top">A-Tre Konsult</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,19 +81,19 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#services">Arbeidsområder</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#portfolio">Bildegalleri</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">Om A-Tre</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">Team</a>
+                        <a class="page-scroll" href="#team">Teamet</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Kontakt oss</a>
                     </li>
                 </ul>
             </div>
@@ -78,9 +106,9 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+                <div class="intro-lead-in">Velkommen!</div>
+                <div class="intro-heading">Hva kan vi hjelpe deg med?</div>
+                <a href="#services" class="page-scroll btn btn-xl">Arbeidsområder</a>
             </div>
         </div>
     </header>
@@ -90,34 +118,67 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Arbeidsområder</h2>
+                    <h3 class="section-subheading text-muted">Vi har kompetanse innen flere områder.</h3>
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-exclamation fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="service-heading">Idéforslag</h4>
+                    <p class="text-muted">
+                        Vi lager gjerne et ideforslag for dere.<br>
+                        Vi tar utgangspunkt i dine/deres egne ønsker og ideer.<br>
+                        Sammen bearbeider vi disse ideene til et skisseforslag som ivaretar dine/deres ideer, estetikk og funksjonalitet.
+                        Samtidig sikrer vi at dette forslaget er i henhold til gjeldende regler, som f.eks reguleringsbestemmelsene og gjeldende forskrifter.
+                    </p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Presentasjonstegninger</h4>
+                    <p class="text-muted">
+                        Vi kan lage foto-realistiske tegninger for visualisering av bygg og prosjekter
+                        Vi kan også lage håndtegnede perspektivtegninger til for eksempel salg.
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-6">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-home fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Byggesøknad</h4>
+                    <p class="text-muted">
+                        Etter at skisseforslaget har falt i smak, utarbeides nødvendig tegninger for byggesøknader.
+                        Disse tegningene og et situasjonskart vil inneholde nødvendige opplysninger og vil være et vedlegg til byggesøknaden.
+                    <p class="text-muted">
+                        For å få kommunal godkjenning for ditt prosjekt, kan vi utarbeide nødvendige byggesøknadspapirer.
+                        Det finnes flere søknadsvarianter, hvilken som benyttes for ditt prosjekt må vurderes spesifikt.
+                    </p>
+                </div>
+                <div class="col-md-6">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="service-heading">Teknisk dokumentasjon</h4>
+                    <p class="text-muted">
+                        Vi kan utarbeide beregninger av energibehov i ditt bygg, hvor det angis nødvendig energibehov/-forbruk basert på prosjektert varmeisolering og tekniske installasjoner.
+                    <p class="text-muted">
+                        Basert på byggesøknadstegningene kan vi utarbeide dokumentasjon på hoved-bæresystem for ditt bygg. Her tas det hensyn til aktuell snø- og vindlast for din kommune.
+                        Disse beregningene vil være aktuelle for din byggmester når bygget skal oppføres.
+                    <p class="text-muted">
+                        Basert på byggesøknads-tegninger kan vi utarbeide detaljerte arbeids-/monteringstegninger som din byggmester trenger for å bygge ditt bygg.
+                        Detaljeringsnivå kan avtales.
+                    <p class="text-muted">
+                        Vi kan tilby branntekniske rammer basert på preaksepterte løsninger for ditt bygg.
+                    </p>
                 </div>
             </div>
         </div>
@@ -128,8 +189,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Bildegalleri</h2>
+                    <h3 class="section-subheading text-muted">Prosjekteksempler.</h3>
                 </div>
             </div>
             <div class="row">
@@ -143,8 +204,8 @@
                         <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
+                        <h4>Fritidsboliger</h4>
+                        <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -157,8 +218,8 @@
                         <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>Boliger</h4>
+                        <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -171,8 +232,8 @@
                         <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>Feltutbyggelse</h4>
+                        <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -185,8 +246,8 @@
                         <img src="img/portfolio/golden.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>Tegninger</h4>
+                        <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -199,8 +260,8 @@
                         <img src="img/portfolio/escape.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>3D fotomontasje</h4>
+                        <p class="text-muted"></p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -213,8 +274,8 @@
                         <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>Fotoklipp</h4>
+                        <p class="text-muted"></p>
                     </div>
                 </div>
             </div>
@@ -226,77 +287,80 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Om A-Tre</h2>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="panel">
+                            
+                        <div class="heading">
+                            
+                            <h4 class="subheading">Om A-Tre</h4>
+                        </div>
+                        <div class="body">
+                            <p class="text-muted">
+                                A-Tre konsult as er et arkitekt- og konsulentkontor som ble grunnlagt i 1998. Firmaet består i dag av to ansatte, Wenche Hillestad og Tom Tellefsen. Wenche er utdannet ved Statens Håndverk og Kunstindustriskole, diplom i 1982 i interiør og møbeldesign. Siden den gang har hun jobbet med prosjektering av boliger og mindre bygg. Tom er utdannet bygningstekniker, har jobbet som snekker og, i de siste 25 årene, på tegnebrettet med konstruksjonstegninger.
+                            <p class="text-muted">
+                                A-Tre konsult tilbyr skisser, byggemeldingstegninger, presentasjonstegning, konstruksjonstegninger, beregninger, komplette byggesøknader.
+                            <p class="text-muted">
+                                Vi har kontorer i Semsbyen, kort vei fra E18 og de fleste byer på Østlandet.
+                            <p class="text-muted">
+                                A-Tre konsult as er fortaksregistrert.
+                            </p>
+                        </div>
+                    </div>
+                        
+                    <div class="panel">
+                        <div class="heading">
+                            
+                            <h4 class="subheading">Forretningsidé</h4>
+                        </div>
+                        <div class="body">
+                            <p class="text-muted">
+                                A-Tre konsult skal tilby gode og kostnadseffektive arkitekt- og konsulenttjenester for privatpersoner og profesjonelle kunder i det norske markedet til konkurransedyktige priser. Gjennom fokus på samarbeid og gode løsninger skal vi sikre oss markedets mest fornøyde kunder.
+
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="panel">
+                        <div class="heading">
+                            
+                            <h4 class="subheading">Visjon</h4>
+                        </div>
+                        <div class="body">
+                            <p class="text-muted">
+                                Våre kunder skal være så fornøyde med våre løsninger at annen markedsføring er uaktuell.
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="panel">
+                        <div class="heading">
+                            
+                            <h4 class="subheading">Kjerneverdier</h4>
+                        </div>
+                        <div class="body">
+                            <p class="text-muted">
+                                Våre verdier inspirerer oss til å yte det lille ekstra som gjør at kundene velger oss fremfor våre konkurrenter. De minner oss på hvordan vi på best mulig måte kan skape verdi for våre kunder.
+                            <p>
+                                Profesjonalitet
+                            <p class="text-muted">
+                                A-Tre konsult er en profesjonell bedrift med høyt kompetente medarbeidere. God kunnskap, høy etisk standard og kvalitet gjennomsyrer bedriften og gjør at vi kan holde det vi lover og levere det vi sier vi skal levere.
+                            <p>
+                                Iderikdom
+                            <p class="text-muted">
+                                A-Tre konsult tilbyr iderike og kreative løsninger med fokus på godt design tilrettelagt for hver enkelt kunde.
+                             <p>
+                                Samarbeid
+                            <p class="text-muted">
+                                A-Tre konsult ser verdien i å skape og opprettholde gode relasjoner. Dette lykkes vi med gjennom å lytte til det kunden sier og sammen med kunden skape et godt og langsiktig samarbeidsforhold.
+                            </p>
+                        </div>
+                    </div>
+                        
                 </div>
             </div>
         </div>
@@ -307,31 +371,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Teamet</h2>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="team-member">
                         <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
+                        <h4>Tom Tellefsen</h4>
+                        <p class="text-muted">Daglig leder <br>Bygningstekniker</p>
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -342,11 +391,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="team-member">
-                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
+                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Wenche Hillestad</h4>
+                        <p class="text-muted">Arkitekt</p>
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -367,7 +416,7 @@
     </section>
 
     <!-- Clients Aside -->
-    <aside class="clients">
+    <!--<aside class="clients">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
@@ -392,45 +441,59 @@
                 </div>
             </div>
         </div>
-    </aside>
+    </aside>-->
 
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Kontakt oss</h2>
+                    <h3 class="section-subheading text-muted">Send oss gjerne en forespørsel.</h3>
+                    
                 </div>
             </div>
             <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p class="text-muted">
+                        Telefon: 33 34 77 93 
+                    <p class="text-muted">    
+                        E-post: <a href="mailto:firmapost@a-tre.no" style="color:#777">firmapost@a-tre.no</a>
+                    
+                </div>
+            </div>
+            <div class="row" style="margin-top:30px">
                 <div class="col-lg-12">
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <label for="name" style="color:#AEAEAE">Navn:</label>
+                                    <input type="text" class="form-control" placeholder="Navn *" id="name" required data-validation-required-message="Skriv inn navnet ditt.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <label for="email" style="color:#AEAEAE">E-post:</label>
+                                    <input type="email" class="form-control" placeholder="E-post *" id="email" required data-validation-required-message="Skriv inn e-posten din.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <label for="phone" style="color:#AEAEAE">Telefonnummer:</label>
+                                    <input type="tel" class="form-control" placeholder="Telefon *" id="phone" required data-validation-required-message="Skriv inn telefonnummeret ditt.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <label for="message" style="color:#AEAEAE">Melding:</label>
+                                    <textarea class="form-control" placeholder="Melding *" id="message" required data-validation-required-message="Skriv inn meldingen din."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
+                                <button type="submit" class="btn btn-xl">Send melding</button>
                             </div>
                         </div>
                     </form>
@@ -443,7 +506,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2016</span>
+                    <span class="copyright">Copyright &copy; A-tre.no 2016</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
@@ -455,14 +518,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
+                
             </div>
         </div>
     </footer>
